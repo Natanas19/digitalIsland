@@ -22,6 +22,7 @@
   filter: blur(120px);
   pointer-events: none;
 }
+
 .hero__glow--blue {
   width: 600px;
   height: 600px;
@@ -29,6 +30,7 @@
   top: -100px;
   right: -150px;
 }
+
 .hero__glow--gold {
   width: 400px;
   height: 400px;
@@ -73,6 +75,7 @@
   border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
 }
+
 .hero__stat-number {
   display: block;
   font-family: var(--font-heading);
@@ -80,6 +83,7 @@
   font-weight: 700;
   color: var(--color-primary);
 }
+
 .hero__stat-label {
   font-size: 0.8rem;
   color: var(--color-text-muted);
@@ -105,20 +109,26 @@
 }
 
 .services__icon {
-  font-size: 2rem;
+  width: 100px;
+  /* controla o tamanho */
+  height: 100px;
+  object-fit: contain;
   margin-bottom: 1rem;
   display: block;
 }
+
 .services__title {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
 }
+
 .services__desc {
   font-size: 0.9rem;
   color: var(--color-text-muted);
   line-height: 1.7;
   flex: 1;
 }
+
 .services__cta {
   display: inline-block;
   margin-top: 1.25rem;
@@ -127,6 +137,7 @@
   color: var(--color-primary);
   transition: gap var(--transition);
 }
+
 .services__card:hover .services__cta {
   letter-spacing: 0.03em;
 }
@@ -149,6 +160,7 @@
   text-align: center;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
+
 .how__step:hover {
   border-color: var(--color-primary);
   box-shadow: 0 0 24px var(--color-primary-glow);
@@ -173,15 +185,18 @@
   line-height: 1;
   margin-bottom: 0.5rem;
 }
+
 .how__icon {
   font-size: 2rem;
   display: block;
   margin-bottom: 1rem;
 }
+
 .how__title {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
+
 .how__subtitle {
   display: block;
   font-size: 0.8rem;
@@ -190,6 +205,7 @@
   letter-spacing: 0.04em;
   margin-bottom: 0.75rem;
 }
+
 .how__desc {
   font-size: 0.875rem;
   color: var(--color-text-muted);
@@ -202,6 +218,7 @@
   overflow: hidden;
   background: hsl(220, 20%, 3%);
 }
+
 .diferencial__glow {
   position: absolute;
   width: 500px;
@@ -214,6 +231,7 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+
 .diferencial__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -228,6 +246,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+
 .diferencial__item {
   display: flex;
   align-items: center;
@@ -239,9 +258,11 @@
   font-size: 0.875rem;
   transition: border-color var(--transition);
 }
+
 .diferencial__item:hover {
   border-color: var(--color-primary);
 }
+
 .diferencial__item-icon {
   font-size: 1.25rem;
   flex-shrink: 0;
@@ -261,6 +282,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .planos__card--highlight {
   border-color: var(--color-primary);
   box-shadow: 0 0 32px var(--color-primary-glow);
@@ -287,16 +309,19 @@
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
 }
+
 .planos__desc {
   font-size: 0.875rem;
   color: var(--color-text-muted);
   line-height: 1.65;
   margin-bottom: 1.5rem;
 }
+
 .planos__list {
   flex: 1;
   margin-bottom: 1.5rem;
 }
+
 .planos__item {
   display: flex;
   align-items: flex-start;
@@ -306,12 +331,17 @@
   border-bottom: 1px solid hsl(220, 15%, 14%);
   color: var(--color-text-muted);
 }
-.planos__item:last-child { border-bottom: none; }
+
+.planos__item:last-child {
+  border-bottom: none;
+}
+
 .planos__check {
   color: var(--color-primary);
   font-weight: 700;
   flex-shrink: 0;
 }
+
 .planos__btn {
   width: 100%;
   justify-content: center;
@@ -324,12 +354,14 @@
   text-align: center;
   background: hsl(220, 20%, 3%);
 }
+
 .cta-final__glow {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at center, hsl(210, 100%, 55%, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
+
 .cta-final__inner {
   position: relative;
   z-index: 1;
@@ -338,7 +370,11 @@
   align-items: center;
   gap: 1.25rem;
 }
-.cta-final__inner .section-desc { text-align: center; }
+
+.cta-final__inner .section-desc {
+  text-align: center;
+}
+
 .cta-final__btn {
   font-size: 1rem;
   padding: 0.9rem 2rem;
@@ -347,20 +383,32 @@
 
 /* ---- Responsivo ---- */
 @media (max-width: 900px) {
+
   .services__grid,
   .how__grid,
   .planos__grid {
     grid-template-columns: 1fr;
   }
+
   .diferencial__inner {
     grid-template-columns: 1fr;
   }
+
   .diferencial__list {
     grid-template-columns: 1fr 1fr;
   }
-  .how__connector { display: none; }
+
+  .how__connector {
+    display: none;
+  }
 }
+
 @media (max-width: 520px) {
-  .diferencial__list { grid-template-columns: 1fr; }
-  .hero__stats { gap: 1.5rem; }
+  .diferencial__list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__stats {
+    gap: 1.5rem;
+  }
 }

@@ -4,6 +4,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
+import iconSite from '../../assets/icons/site.png'
+import iconTrafego from '../../assets/icons/trafego.png'
+import iconConteudo from '../../assets/icons/conteudo.png'
 
 const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
 
@@ -81,19 +84,19 @@ function HeroSection() {
 function ServicosSection() {
   const items = [
     {
-      icon: '🌐',
+      icon: iconSite,
       title: 'Presença Digital',
       desc: 'Sites e páginas pensados para converter visitantes em clientes. Estrutura clara, visual profissional e carregamento rápido.',
       link: '/sites',
     },
     {
-      icon: '📣',
+      icon: iconTrafego,
       title: 'Aquisição de Público',
       desc: 'Tráfego pago gerenciado com foco em qualidade e resultado. Alcance as pessoas certas, no momento certo.',
       link: '/trafego',
     },
     {
-      icon: '✍️',
+      icon: iconConteudo,
       title: 'Comunicação e Conteúdo',
       desc: 'Posicionamento claro, autoridade construída com consistência. Conteúdo que gera conexão e oportunidades.',
       link: '/conteudo',
@@ -117,7 +120,7 @@ function ServicosSection() {
         <div className="services__grid">
           {items.map(({ icon, title, desc, link }) => (
             <Link to={link} key={title} className="card services__card">
-              <span className="services__icon">{icon}</span>
+              <img src={icon} alt={title} className="services__icon" />
               <h3 className="services__title">{title}</h3>
               <p className="services__desc">{desc}</p>
               <span className="services__cta">Saiba mais →</span>
