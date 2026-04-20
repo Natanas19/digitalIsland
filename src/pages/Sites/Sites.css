@@ -1,0 +1,72 @@
+/* Sites.css — Estilos da página Sites + utilitários compartilhados */
+
+/* Hero de página interna (reutilizável) */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(4rem, 8vw, 6rem) clamp(3rem, 6vw, 5rem);
+}
+.page-hero__glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: hsl(210, 100%, 55%, 0.1);
+  border-radius: 50%;
+  filter: blur(100px);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+.page-hero__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-block: 0.75rem 1rem;
+}
+
+/* Grids das páginas de serviço */
+.tipos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.processo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.tipos__card {
+  display: flex;
+  flex-direction: column;
+}
+.diff-card {
+  text-align: center;
+}
+
+/* CTA simples */
+.cta-simples {
+  background: hsl(220, 20%, 3%);
+  position: relative;
+}
+.cta-simples::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, hsl(210, 100%, 55%, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-simples .container { position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  .tipos-grid, .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+  .processo-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .tipos-grid, .diferenciais-grid { grid-template-columns: 1fr; }
+}

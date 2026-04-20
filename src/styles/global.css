@@ -1,0 +1,303 @@
+/* ============================================================
+   DIGITAL ISLAND — Global Styles
+   Design System: Dark/Futurista com Azul Neon + Dourado
+   ============================================================ */
+
+/* ---------- 1. Design Tokens (CSS Variables) ---------- */
+:root {
+  /* Cores principais */
+  --color-bg:         #000000;
+  --color-primary:    hsl(210, 100%, 55%);     /* Azul neon */
+  --color-accent:     hsl(45, 100%, 55%);      /* Dourado */
+  --color-card:       hsl(220, 20%, 6%);
+  --color-border:     hsl(220, 15%, 18%);
+  --color-text:       hsl(210, 40%, 98%);
+  --color-text-muted: hsl(215, 20%, 55%);
+
+  /* Derivados */
+  --color-primary-glow: hsl(210, 100%, 55%, 0.25);
+  --color-accent-glow:  hsl(45, 100%, 55%, 0.25);
+  --color-primary-dark: hsl(210, 100%, 40%);
+  --color-surface:      hsl(220, 20%, 8%);
+
+  /* Tipografia */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Espaçamentos */
+  --section-py: clamp(4rem, 8vw, 7rem);
+  --container:  1200px;
+  --radius:     12px;
+  --radius-lg:  20px;
+
+  /* Transições */
+  --transition: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Header */
+  --header-h: 72px;
+}
+
+/* ---------- 2. Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ---------- 3. Tipografia utilitária ---------- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-primary  { color: var(--color-primary); }
+.text-accent   { color: var(--color-accent); }
+.text-muted    { color: var(--color-text-muted); }
+
+/* ---------- 4. Layout utilitário ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+.section {
+  padding-block: var(--section-py);
+}
+
+/* ---------- 5. Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 18px var(--color-primary-glow);
+}
+.btn-primary:hover {
+  background: hsl(210, 100%, 62%);
+  box-shadow: 0 0 28px var(--color-primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text);
+  background: transparent;
+}
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 0 12px var(--color-primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: #000;
+  box-shadow: 0 0 18px var(--color-accent-glow);
+}
+.btn-accent:hover {
+  box-shadow: 0 0 28px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  background: #20bd5a;
+  box-shadow: 0 0 28px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ---------- 6. Cards ---------- */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 24px var(--color-primary-glow);
+}
+
+/* ---------- 7. Badge / Tag ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  background: hsl(210, 100%, 55%, 0.08);
+}
+
+/* ---------- 8. Divisor decorativo ---------- */
+.divider {
+  width: 60px;
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  margin-block: 1.25rem;
+}
+
+/* ---------- 9. Gradientes de fundo (reutilizáveis) ---------- */
+.bg-glow-blue {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  background: var(--color-primary-glow);
+}
+.bg-glow-gold {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  background: var(--color-accent-glow);
+}
+
+/* ---------- 10. Grade de fundo (hero) ---------- */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.3;
+}
+
+/* ---------- 11. Seção título padrão ---------- */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+.section-desc {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  line-height: 1.75;
+}
+
+/* ---------- 12. Animações de entrada ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--color-primary-glow); }
+  50%       { box-shadow: 0 0 28px var(--color-primary-glow); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-fade-up  { animation: fadeUp 0.6s ease both; }
+.animate-fade-in  { animation: fadeIn 0.5s ease both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ---------- 13. Scrollbar customizada ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+/* ---------- 14. Utilitários gerais ---------- */
+.text-center { text-align: center; }
+.text-center .section-desc { margin-inline: auto; }
+.flex { display: flex; }
+.grid { display: grid; }
+.relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+
+/* ---------- 15. Responsividade base ---------- */
+@media (max-width: 768px) {
+  :root {
+    --section-py: clamp(3rem, 6vw, 5rem);
+    --header-h: 64px;
+  }
+}

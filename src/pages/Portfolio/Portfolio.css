@@ -1,0 +1,230 @@
+/* Portfolio.css */
+
+/* ---- Filtros ---- */
+.portfolio__filtros {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.portfolio__filtro {
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  border: 1.5px solid var(--color-border);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.03em;
+}
+.portfolio__filtro:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.portfolio__filtro--ativo {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 16px var(--color-primary-glow);
+}
+
+/* ---- Grid de cards ---- */
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ---- Card de case ---- */
+.portfolio__card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  width: 100%;
+}
+.portfolio__card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 24px var(--color-primary-glow);
+  transform: translateY(-3px);
+}
+
+.portfolio__emoji {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.portfolio__card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.portfolio__segmento {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.portfolio__card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-heading);
+}
+.portfolio__card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+/* Mini resultados dentro do card */
+.portfolio__mini-results {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.portfolio__mini-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+.portfolio__mini-stat span:first-child {
+  font-size: 1.1rem;
+}
+
+.portfolio__ver-mais {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Modal ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: hsl(0, 0%, 0%, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease both;
+}
+
+.modal-box {
+  background: hsl(220, 20%, 6%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: fadeUp 0.3s ease both;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.modal-close:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-section {
+  margin-bottom: 1.5rem;
+}
+.modal-section p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.modal-section-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.modal-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.modal-stat {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.modal-stat-val {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: block;
+}
+.modal-stat-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 900px) {
+  .portfolio__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .portfolio__grid { grid-template-columns: 1fr; }
+  .modal-results { grid-template-columns: 1fr; }
+}
