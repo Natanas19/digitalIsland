@@ -38,7 +38,7 @@ function HeroSection() {
 
       <div className="container hero__content">
         <span className="badge animate-fade-up">
-          🏝️ Agência Digital — Florianópolis, SC
+          Agência Digital — Florianópolis, SC
         </span>
 
         <h1 className="hero__title animate-fade-up delay-1">
