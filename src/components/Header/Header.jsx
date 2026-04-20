@@ -6,7 +6,7 @@ import './Header.css'
 import logo from '../../assets/logo.png'
 
 // Número do WhatsApp — altere aqui para o número real
-const WHATSAPP = 'https://wa.me/+55 48 88793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+const WHATSAPP = 'https://wa.me/+554888793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
 
 // Itens de navegação
 const NAV_ITEMS = [
