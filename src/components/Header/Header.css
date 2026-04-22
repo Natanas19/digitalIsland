@@ -22,10 +22,8 @@
 .header__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* ESSENCIAL */
-  height: 100%;
-  gap: 2rem;
+  justify-content: flex-start;
+  /* ✅ */
 }
 
 .header__logo-img {
