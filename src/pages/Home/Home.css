@@ -412,3 +412,24 @@
     gap: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .hero__stats {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .hero__stat {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .hero__stat-number {
+    font-size: 1.3rem;
+  }
+
+  .hero__stat-label {
+    font-size: 0.7rem;
+  }
+}

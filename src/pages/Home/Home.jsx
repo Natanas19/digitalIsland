@@ -37,9 +37,6 @@ function HeroSection() {
       <div className="hero__glow hero__glow--gold"  aria-hidden="true" />
 
       <div className="container hero__content">
-        <span className="badge animate-fade-up">
-          Agência Digital — Florianópolis, SC
-        </span>
 
         <h1 className="hero__title animate-fade-up delay-1">
           Chega de incerteza.<br />
