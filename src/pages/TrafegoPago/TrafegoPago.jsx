@@ -3,6 +3,7 @@
 
 import React from 'react'
 import '../Sites/Sites.css' // Reaproveita estilos compartilhados
+import './TrafegoPago.css' // Estilos específicos para tráfego pago
 
 const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20gest%C3%A3o%20de%20tr%C3%A1fego%20pago.'
 
@@ -71,7 +72,13 @@ export default function TrafegoPago() {
               Campanhas não são set-and-forget. Gerenciamos, monitoramos e otimizamos continuamente.
             </p>
           </div>
-          <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: 700, marginInline: 'auto' }}>
+          <div className="trafego-passos"
+            style={{
+              marginTop: '3rem',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)', // desktop
+              gap: '1.5rem'
+            }}>
             {passos.map(({ num, title, desc }) => (
               <div key={num} className="card" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                 <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-primary)', opacity: 0.5, minWidth: '2.5rem', flexShrink: 0 }}>{num}</span>
@@ -90,15 +97,39 @@ export default function TrafegoPago() {
         <div className="container text-center">
           <span className="section-label">Resultados</span>
           <h2 className="section-title">O que você pode esperar</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+
+          <div
+            className="trafego-metricas"
+            style={{ marginTop: '3rem' }}
+          >
             {[
               { val: '+40%', label: 'Redução no custo por lead (média dos clientes)' },
-              { val: '3x',   label: 'Mais oportunidades com o mesmo orçamento' },
+              { val: '3x', label: 'Mais oportunidades com o mesmo orçamento' },
               { val: '100%', label: 'Transparência em relatórios e resultados' },
             ].map(({ val, label }) => (
-              <div key={val} className="card" style={{ textAlign: 'center', padding: '2.5rem 2rem' }}>
-                <span style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-primary)', display: 'block', marginBottom: '0.75rem' }}>{val}</span>
-                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', lineHeight: 1.65 }}>{label}</span>
+              <div
+                key={val}
+                className="card"
+                style={{ textAlign: 'center', padding: '2.5rem 2rem' }}
+              >
+                <span style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '2.5rem',
+                  fontWeight: 700,
+                  color: 'var(--color-primary)',
+                  display: 'block',
+                  marginBottom: '0.75rem'
+                }}>
+                  {val}
+                </span>
+
+                <span style={{
+                  color: 'var(--color-text-muted)',
+                  fontSize: '0.875rem',
+                  lineHeight: 1.65
+                }}>
+                  {label}
+                </span>
               </div>
             ))}
           </div>

@@ -1,0 +1,22 @@
+/* Grid dos passos (metodologia) */
+.trafego-passos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Grid das métricas */
+.trafego-metricas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .trafego-passos,
+  .trafego-metricas {
+    grid-template-columns: 1fr;
+  }
+}
