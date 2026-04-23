@@ -103,17 +103,20 @@ export default function Conteudo() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '1.25rem',
-            marginTop: '3rem',
-          }}>
+          <div
+            className="conteudo-processo"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '1.25rem',
+              marginTop: '3rem',
+            }}
+          >
             {[
-              { n: '01', t: 'Imersão na marca',    d: 'Tom de voz, público-alvo, diferenciais e objetivos.' },
+              { n: '01', t: 'Imersão na marca', d: 'Tom de voz, público-alvo, diferenciais e objetivos.' },
               { n: '02', t: 'Planejamento editorial', d: 'Calendário mensal com temas, formatos e datas.' },
-              { n: '03', t: 'Produção',             d: 'Textos, artes e roteiros criados e revisados.' },
-              { n: '04', t: 'Entrega e análise',    d: 'Publicação organizada e acompanhamento de performance.' },
+              { n: '03', t: 'Produção', d: 'Textos, artes e roteiros criados e revisados.' },
+              { n: '04', t: 'Entrega e análise', d: 'Publicação organizada e acompanhamento de performance.' },
             ].map(({ n, t, d }) => (
               <div key={n} className="card" style={{ textAlign: 'center' }}>
                 <span style={{

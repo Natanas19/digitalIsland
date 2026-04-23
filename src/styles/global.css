@@ -301,3 +301,16 @@ h1, h2, h3, h4, h5 {
     --header-h: 64px;
   }
 }
+
+@media (max-width: 768px) {
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .conteudo-processo {
+    grid-template-columns: 1fr !important;
+  }
+}
