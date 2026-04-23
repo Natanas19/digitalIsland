@@ -175,6 +175,7 @@
   height: 2px;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   z-index: 1;
+  display: none;
 }
 
 .how__num {

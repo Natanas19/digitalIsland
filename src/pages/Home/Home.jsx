@@ -213,7 +213,7 @@ function DiferencialSection() {
           <h2 className="section-title" id="diff-title">
             Comunicação e acompanhamento constante
           </h2>
-          <div className="divider" />
+          <div className="divider divider-" />
           <p className="section-desc">
             Mantemos um processo claro de acompanhamento, com atualizações frequentes,
             organização das ações e transparência em cada etapa do trabalho.

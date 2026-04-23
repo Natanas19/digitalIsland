@@ -20,7 +20,7 @@ const CASES = [
     solucao: 'Criamos um site de apresentação + catálogo, configuramos campanhas sazonais no Meta Ads e estruturamos o atendimento via WhatsApp Business.',
     resultado: [
       { val: '+180%', desc: 'aumento em contatos via WhatsApp' },
-      { val: '3.2x',  desc: 'ROAS médio nas campanhas' },
+      { val: '3.2x', desc: 'ROAS médio nas campanhas' },
       { val: '45 dias', desc: 'para resultado consistente' },
     ],
     cor: '#3b9eff',
@@ -37,8 +37,8 @@ const CASES = [
     solucao: 'Posicionamento estratégico nas redes sociais, calendário editorial mensal e campanhas de lead generation no Instagram.',
     resultado: [
       { val: '+220%', desc: 'crescimento de seguidores em 3 meses' },
-      { val: '38',    desc: 'novos agendamentos via Instagram' },
-      { val: 'R$12',  desc: 'custo médio por lead qualificado' },
+      { val: '38', desc: 'novos agendamentos via Instagram' },
+      { val: 'R$12', desc: 'custo médio por lead qualificado' },
     ],
     cor: '#a78bfa',
     emoji: '🧠',
@@ -53,8 +53,8 @@ const CASES = [
     desafio: 'Empresa consolidada sem presença digital. Perdia clientes que pesquisavam online para concorrentes com sites.',
     solucao: 'Site institucional com galeria de obras, depoimentos de clientes, formulário de orçamento e SEO local configurado.',
     resultado: [
-      { val: '+95%',  desc: 'visitas orgânicas em 60 dias' },
-      { val: '22',    desc: 'solicitações de orçamento no 1º mês' },
+      { val: '+95%', desc: 'visitas orgânicas em 60 dias' },
+      { val: '22', desc: 'solicitações de orçamento no 1º mês' },
       { val: '1ª pág', desc: 'no Google para termos locais' },
     ],
     cor: '#f59e0b',
@@ -71,8 +71,8 @@ const CASES = [
     solucao: 'Site com agendamento online, campanhas no Google e Meta, conteúdo de autoridade sobre saúde visual e chatbot para triagem.',
     resultado: [
       { val: '+310%', desc: 'agendamentos online em 4 meses' },
-      { val: '2.8x',  desc: 'retorno sobre investimento em ads' },
-      { val: '-40%',  desc: 'tempo de atendimento por automação' },
+      { val: '2.8x', desc: 'retorno sobre investimento em ads' },
+      { val: '-40%', desc: 'tempo de atendimento por automação' },
     ],
     cor: '#10b981',
     emoji: '👓',
@@ -87,9 +87,9 @@ const CASES = [
     desafio: 'Excelente produto mas comunicação fraca. Dificuldade em mostrar valor para RHs e gestores de grandes empresas.',
     solucao: 'Reposicionamento da comunicação, produção semanal de conteúdo B2B, cases de resultado e sequência de e-mail para leads corporativos.',
     resultado: [
-      { val: '15',    desc: 'novos contratos B2B em 5 meses' },
+      { val: '15', desc: 'novos contratos B2B em 5 meses' },
       { val: '+400%', desc: 'engajamento no LinkedIn' },
-      { val: '8',     desc: 'palestras e convites gerados' },
+      { val: '8', desc: 'palestras e convites gerados' },
     ],
     cor: '#3b9eff',
     emoji: '🎓',
@@ -105,7 +105,7 @@ const CASES = [
     solucao: 'Landing page com portfólio visual e formulário de encomenda, campanha de remarketing e conteúdo de produto no Instagram.',
     resultado: [
       { val: '+270%', desc: 'encomendas via digital' },
-      { val: '4.1x',  desc: 'ROAS nas campanhas de evento' },
+      { val: '4.1x', desc: 'ROAS nas campanhas de evento' },
       { val: '12 dias', desc: 'para primeiro pedido convertido' },
     ],
     cor: '#f472b6',
@@ -181,7 +181,9 @@ export default function Portfolio() {
                 <div className="portfolio__mini-results">
                   {item.resultado.slice(0, 2).map(r => (
                     <div key={r.desc} className="portfolio__mini-stat">
-                      <span style={{ color: item.cor, fontFamily: 'var(--font-heading)', fontWeight: 700 }}>{r.val}</span>
+                      <span style={{ color: 'var(--color-success)', fontFamily: 'var(--font-heading)', fontWeight: 700 }}>
+                        {r.val}
+                      </span>
                       <span>{r.desc}</span>
                     </div>
                   ))}

@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5 {
   width: 60px;
   height: 3px;
   border-radius: 99px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  background: var(--color-primary);
   margin-block: 1.25rem;
 }
 
@@ -299,6 +299,7 @@ h1, h2, h3, h4, h5 {
   :root {
     --section-py: clamp(3rem, 6vw, 5rem);
     --header-h: 64px;
+    --color-success: #10b981; /* verde moderno (tailwind style) */
   }
 }
 
