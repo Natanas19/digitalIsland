@@ -415,6 +415,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero .container {
+    margin-top: -20px;
+  }
+
   .hero__stats {
     justify-content: space-between;
     gap: 0.5rem;
