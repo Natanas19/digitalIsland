@@ -7,6 +7,7 @@ import './Home.css'
 import iconSite from '../../assets/icons/site.png'
 import iconTrafego from '../../assets/icons/trafego.png'
 import iconConteudo from '../../assets/icons/conteudo.png'
+import { LuRadio, LuMonitorCheck, LuSettings } from "react-icons/lu";
 
 const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
 
@@ -136,21 +137,21 @@ function ComoFuncionaSection() {
   const steps = [
     {
       num: '01',
-      icon: '📡',
+      icon: <LuRadio size={32} />,
       title: 'Atração',
       subtitle: 'Tráfego qualificado',
       desc: 'Geramos interesse de pessoas que realmente podem se tornar clientes, com anúncios segmentados e estratégia de alcance consistente.',
     },
     {
       num: '02',
-      icon: '🖥️',
+      icon: <LuMonitorCheck size={32}/>,
       title: 'Conversão',
       subtitle: 'Site e página de destino',
       desc: 'Transformamos visitantes em oportunidades de contato com estrutura visual clara, argumentação direta e chamadas à ação eficazes.',
     },
     {
       num: '03',
-      icon: '⚙️',
+      icon: <LuSettings size={32}/>,
       title: 'Organização',
       subtitle: 'Atendimento e automação',
       desc: 'Estruturamos o fluxo de atendimento para que nenhuma oportunidade seja perdida. Automatizamos o que é possível, humanizamos o que importa.',
