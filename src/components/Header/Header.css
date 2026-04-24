@@ -1,5 +1,4 @@
 /* Header.css — Estilos do cabeçalho fixo */
-
 .header {
   position: fixed;
   top: 0;
@@ -23,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* ✅ */
+  height: 100%; /* ← adiciona isso */
 }
 
 .header__logo-img {
@@ -40,7 +39,6 @@
   align-items: center;
   gap: 0.25rem;
   margin-left: auto;
-  /* empurra tudo pra direita */
 }
 
 .header__cta {
@@ -119,7 +117,8 @@
 /* ---- Overlay mobile ---- */
 .header__overlay {
   position: fixed;
-  inset: var(--header-h) 0 0 0;
+  inset: 0;
+  top: var(--header-h);
   background: hsl(0, 0%, 0%, 0.6);
   z-index: 99;
   backdrop-filter: blur(4px);
@@ -135,24 +134,25 @@
     display: none;
   }
 
-  .header__nav {
-    position: fixed;
-    top: var(--header-h);
-    right: 0;
-    bottom: 0;
-    width: min(280px, 85vw);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    padding: 1.5rem 1rem;
-    background: hsl(220, 20%, 5%);
-    border-left: 1px solid var(--color-border);
-    z-index: 101;
-    transform: translateX(100%);
-    transition: transform var(--transition-slow);
-    margin-left: 0;
-    overflow-y: auto;
-  }
+.header__nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: calc(100vh - var(--header-h));
+  width: min(280px, 85vw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1.5rem 1rem;
+  background: hsl(220, 20%, 5%);
+  border-left: 1px solid var(--color-border);
+  z-index: 101;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  margin-left: 0;
+  overflow-y: auto;
+}
 
   .header__nav--open {
     transform: translateX(0);
