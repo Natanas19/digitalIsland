@@ -3,17 +3,42 @@
 
 import React from 'react'
 import './Sites.css'
+import { LuZap, LuSmartphone, LuTarget, LuSearch, LuShieldCheck, LuPencil } from 'react-icons/lu'
 
 const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20site%20profissional.'
 
 export default function Sites() {
   const diferenciais = [
-    { icon: '⚡', title: 'Carregamento rápido', desc: 'Sites otimizados para performance, sem deixar o visitante esperando.' },
-    { icon: '📱', title: 'Responsivo em todos os dispositivos', desc: 'Experiência perfeita no celular, tablet e desktop.' },
-    { icon: '🎯', title: 'Focado em conversão', desc: 'Cada elemento da página pensado para transformar visita em contato.' },
-    { icon: '🔍', title: 'Preparado para SEO', desc: 'Estrutura técnica correta para aparecer bem nos mecanismos de busca.' },
-    { icon: '🛡️', title: 'Seguro e estável', desc: 'Certificado SSL, hospedagem confiável e suporte contínuo.' },
-    { icon: '✏️', title: 'Fácil de atualizar', desc: 'Painel intuitivo para você editar textos e imagens sem precisar de técnico.' },
+    {
+      icon: <LuZap size={28} color="var(--color-primary)" />,
+      title: 'Carregamento rápido',
+      desc: 'Sites otimizados para performance, sem deixar o visitante esperando.',
+    },
+    {
+      icon: <LuSmartphone size={28} color="var(--color-primary)" />,
+      title: 'Responsivo em todos os dispositivos',
+      desc: 'Experiência perfeita no celular, tablet e desktop.',
+    },
+    {
+      icon: <LuTarget size={28} color="var(--color-primary)" />,
+      title: 'Focado em conversão',
+      desc: 'Cada elemento da página pensado para transformar visita em contato.',
+    },
+    {
+      icon: <LuSearch size={28} color="var(--color-primary)" />,
+      title: 'Preparado para SEO',
+      desc: 'Estrutura técnica correta para aparecer bem nos mecanismos de busca.',
+    },
+    {
+      icon: <LuShieldCheck size={28} color="var(--color-primary)" />,
+      title: 'Seguro e estável',
+      desc: 'Certificado SSL, hospedagem confiável e suporte contínuo.',
+    },
+    {
+      icon: <LuPencil size={28} color="var(--color-primary)" />,
+      title: 'Fácil de atualizar',
+      desc: 'Painel intuitivo para você editar textos e imagens sem precisar de técnico.',
+    },
   ]
 
   const tipos = [
@@ -85,7 +110,9 @@ export default function Sites() {
           <div className="diferenciais-grid">
             {diferenciais.map(({ icon, title, desc }) => (
               <div key={title} className="card diff-card">
-                <span style={{ fontSize: '1.75rem', display: 'block', marginBottom: '0.75rem' }}>{icon}</span>
+                <div className="diff-card__icon">
+                  {icon}
+                </div>
                 <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{title}</h3>
                 <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', lineHeight: 1.65 }}>{desc}</p>
               </div>
