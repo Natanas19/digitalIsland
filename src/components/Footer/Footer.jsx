@@ -56,7 +56,7 @@ export default function Footer() {
             digitalislandcomercial@gmail.com
           </a>
           <p className="footer__link" style={{ cursor: 'default' }}>
-            Instagram: @digitalislandltda
+            Instagram: @digitalisland.ltda
           </p>
         </div>
 

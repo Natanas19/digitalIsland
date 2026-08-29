@@ -119,7 +119,7 @@ export default function Contato() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/digitalislandltda?igsh=eHhsMXBzZmQyOGdr"
+                href="https://www.instagram.com/digitalisland.ltda"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contato__canal"
