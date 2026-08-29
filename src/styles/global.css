@@ -6,29 +6,31 @@
 /* ---------- 1. Design Tokens (CSS Variables) ---------- */
 :root {
   /* Cores principais */
-  --color-bg:         #000000;
-  --color-primary:    #1a8cff;     /* Azul neon */
-  --color-accent:     #ffc61a;      /* Dourado */
-  --color-card:       #0c0e12;
-  --color-border:     #272c35;
-  --color-text:       #f8fafc;
+  --color-bg: #000000;
+  --color-primary: #1a8cff;
+  /* Azul neon */
+  --color-accent: #ffc61a;
+  /* Dourado */
+  --color-card: #0c0e12;
+  --color-border: #272c35;
+  --color-text: #f8fafc;
   --color-text-muted: #7588a3;
 
   /* Derivados */
   --color-primary-glow: #1a8cff40;
-  --color-accent-glow:  #ffc61a40;
+  --color-accent-glow: #ffc61a40;
   --color-primary-dark: #0066cc;
-  --color-surface:      #101318;
+  --color-surface: #101318;
 
   /* Tipografia */
   --font-heading: 'Space Grotesk', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   /* Espaçamentos */
   --section-py: clamp(4rem, 8vw, 7rem);
-  --container:  1200px;
-  --radius:     12px;
-  --radius-lg:  20px;
+  --container: 1200px;
+  --radius: 12px;
+  --radius-lg: 20px;
 
   /* Transições */
   --transition: 0.25s ease;
@@ -39,7 +41,9 @@
 }
 
 /* ---------- 2. Reset & Base ---------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -59,7 +63,9 @@ body {
   overflow-x: hidden;
 }
 
-img, video, svg {
+img,
+video,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -76,21 +82,34 @@ button {
   font-family: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* ---------- 3. Tipografia utilitária ---------- */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-.text-primary  { color: var(--color-primary); }
-.text-accent   { color: var(--color-accent); }
-.text-muted    { color: var(--color-text-muted); }
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
 
 /* ---------- 4. Layout utilitário ---------- */
 .container {
@@ -123,6 +142,7 @@ h1, h2, h3, h4, h5 {
   background: var(--color-primary);
   color: #fff;
 }
+
 .btn-primary:hover {
   background: hsl(210, 100%, 62%);
   box-shadow: 0 0 28px var(--color-primary-glow);
@@ -134,6 +154,7 @@ h1, h2, h3, h4, h5 {
   color: var(--color-text);
   background: transparent;
 }
+
 .btn-outline:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
@@ -146,6 +167,7 @@ h1, h2, h3, h4, h5 {
   color: #000;
   box-shadow: 0 0 18px var(--color-accent-glow);
 }
+
 .btn-accent:hover {
   box-shadow: 0 0 28px var(--color-accent-glow);
   transform: translateY(-2px);
@@ -155,6 +177,7 @@ h1, h2, h3, h4, h5 {
   background: #25d342;
   color: #fff;
 }
+
 .btn-whatsapp:hover {
   background: #20bd5a;
   box-shadow: 0 0 28px rgba(37, 211, 102, 0.4);
@@ -169,6 +192,7 @@ h1, h2, h3, h4, h5 {
   padding: 2rem;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
+
 .card:hover {
   border-color: var(--color-primary);
   box-shadow: 0 0 24px var(--color-primary-glow);
@@ -207,6 +231,7 @@ h1, h2, h3, h4, h5 {
   pointer-events: none;
   background: var(--color-primary-glow);
 }
+
 .bg-glow-gold {
   position: absolute;
   border-radius: 50%;
@@ -226,18 +251,21 @@ h1, h2, h3, h4, h5 {
 
 /* ---------- 11. Seção título padrão ---------- */
 .section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary);
   display: block;
   margin-bottom: 0.75rem;
 }
+
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin-bottom: 1rem;
 }
+
 .section-desc {
   color: var(--color-text-muted);
   font-size: 1.05rem;
@@ -247,57 +275,139 @@ h1, h2, h3, h4, h5 {
 
 /* ---------- 12. Animações de entrada ---------- */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 12px var(--color-primary-glow); }
-  50%       { box-shadow: 0 0 28px var(--color-primary-glow); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
-}
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-fade-up  { animation: fadeUp 0.6s ease both; }
-.animate-fade-in  { animation: fadeIn 0.5s ease both; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 12px var(--color-primary-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 28px var(--color-primary-glow);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
 
 /* ---------- 13. Scrollbar customizada ---------- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: 99px;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
 
 /* ---------- 14. Utilitários gerais ---------- */
-.text-center { text-align: center; }
-.text-center .section-desc { margin-inline: auto; }
-.flex { display: flex; }
-.grid { display: grid; }
-.relative { position: relative; }
-.overflow-hidden { overflow: hidden; }
+.text-center {
+  text-align: center;
+}
+
+.text-center .section-desc {
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
 
 /* ---------- 15. Responsividade base ---------- */
 @media (max-width: 768px) {
   :root {
     --section-py: clamp(3rem, 6vw, 5rem);
     --header-h: 64px;
-    --color-success: #10b981; /* verde moderno (tailwind style) */
+    --color-success: #10b981;
+    /* verde moderno (tailwind style) */
   }
 }
 
