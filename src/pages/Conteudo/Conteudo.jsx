@@ -141,7 +141,7 @@ export default function Conteudo() {
         <div className="container">
           <div style={{
             background: 'var(--color-card)',
-            border: '1px solid var(--color-border)',
+            border: '1px solid transparent',
             borderRadius: 'var(--radius-lg)',
             padding: 'clamp(2rem, 5vw, 3.5rem)',
             textAlign: 'center',
