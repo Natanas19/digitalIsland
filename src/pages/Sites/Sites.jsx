@@ -101,7 +101,7 @@ export default function Sites() {
       <section className="section">
         <div className="container">
           <div className="text-center">
-            <span className="section-label">Por que a Digital Island</span>
+            <span className="section-label">Por que a Digital Island?</span>
             <h2 className="section-title">Sites com estrutura real</h2>
             <p className="section-desc">
               Cada detalhe é pensado para gerar resultado. Da estrutura técnica à comunicação visual.
