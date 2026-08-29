@@ -166,6 +166,12 @@
   display: block;
 }
 
+/* Aumenta somente o ícone de Automação de Atendimento */
+.services__card:nth-child(2) .services__icon {
+  width: 115px;
+  height: 115px;
+}
+
 .services__title {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
