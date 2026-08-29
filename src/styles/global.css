@@ -198,6 +198,18 @@ h5 {
   box-shadow: 0 0 24px var(--color-primary-glow);
 }
 
+/* Cards que não são links não exibem contorno nem efeito de clique */
+main .card:not(a) {
+  border-color: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+main .card:not(a):hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
 /* ---------- 7. Badge / Tag ---------- */
 .badge {
   display: inline-flex;
