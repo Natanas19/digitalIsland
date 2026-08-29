@@ -7,18 +7,18 @@
 :root {
   /* Cores principais */
   --color-bg:         #000000;
-  --color-primary:    hsl(210, 100%, 55%);     /* Azul neon */
-  --color-accent:     hsl(45, 100%, 55%);      /* Dourado */
-  --color-card:       hsl(220, 20%, 6%);
-  --color-border:     hsl(220, 15%, 18%);
-  --color-text:       hsl(210, 40%, 98%);
-  --color-text-muted: hsl(215, 20%, 55%);
+  --color-primary:    #1a8cff;     /* Azul neon */
+  --color-accent:     #ffc61a;      /* Dourado */
+  --color-card:       #0c0e12;
+  --color-border:     #272c35;
+  --color-text:       #f8fafc;
+  --color-text-muted: #7588a3;
 
   /* Derivados */
-  --color-primary-glow: hsl(210, 100%, 55%, 0.25);
-  --color-accent-glow:  hsl(45, 100%, 55%, 0.25);
-  --color-primary-dark: hsl(210, 100%, 40%);
-  --color-surface:      hsl(220, 20%, 8%);
+  --color-primary-glow: #1a8cff40;
+  --color-accent-glow:  #ffc61a40;
+  --color-primary-dark: #0066cc;
+  --color-surface:      #101318;
 
   /* Tipografia */
   --font-heading: 'Space Grotesk', sans-serif;
@@ -122,7 +122,6 @@ h1, h2, h3, h4, h5 {
 .btn-primary {
   background: var(--color-primary);
   color: #fff;
-  box-shadow: 0 0 18px var(--color-primary-glow);
 }
 .btn-primary:hover {
   background: hsl(210, 100%, 62%);
@@ -153,9 +152,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-whatsapp {
-  background: #25D366;
+  background: #25d342;
   color: #fff;
-  box-shadow: 0 0 18px rgba(37, 211, 102, 0.3);
 }
 .btn-whatsapp:hover {
   background: #20bd5a;

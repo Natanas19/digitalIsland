@@ -3,11 +3,12 @@
 /* ---- HERO ---- */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--header-h));
+  min-height: 620px; /* diminui o container */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* permite subir o conteúdo */
   overflow: hidden;
-  padding-block: 5rem 4rem;
+  padding-top: 5rem; /* controla a altura do texto */
+  padding-bottom: 4rem;
 }
 
 .hero__grid {
@@ -91,7 +92,15 @@
 
 /* ---- SERVIÇOS ---- */
 .services {
-  background: hsl(220, 20%, 3%);
+  background: #f4f7f9;
+}
+
+.services .section-title {
+  color: #07111a;
+}
+
+.services .section-desc {
+  color: #53687a;
 }
 
 .services__grid {
@@ -101,11 +110,36 @@
   margin-top: 3.5rem;
 }
 
-.services__card {
+.services .services__card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
   cursor: pointer;
+  background: #f4f7f9 !important;
+  border: 1px solid transparent;
+  box-shadow: none;
+  color: #07111a;
+}
+
+.services .services__card:hover {
+  background: #f4f7f9 !important;
+  border-color: #07111a;
+  box-shadow: 0 0 24px var(--color-primary-glow);
+}
+
+/* Mantém todos os textos internos escuros */
+.services .services__title,
+.services .services__desc {
+  color: #07111a;
+}
+
+.services__card:hover,
+.services__card:focus,
+.services__card:active {
+  background: #f4f7f9;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 24px var(--color-primary-glow);
+  color: #07111a;
 }
 
 .services__icon {
@@ -120,11 +154,12 @@
 .services__title {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
+  color: #07111a;
 }
 
 .services__desc {
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: #384550;
   line-height: 1.7;
   flex: 1;
 }
@@ -406,13 +441,16 @@
   }
 }
 
-@media (max-width: 520px) {
-  .diferencial__list {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .hero__title-first {
+    display: inline-block;
+    transform: translateX(50px);
   }
 
-  .hero__stats {
-    gap: 1.5rem;
+  .hero {
+    min-height: 520px;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
 }
 

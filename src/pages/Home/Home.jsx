@@ -41,7 +41,8 @@ function HeroSection() {
       <div className="container hero__content">
 
         <h1 className="hero__title animate-fade-up delay-1">
-          Chega de incerteza.<br />
+          <span className="hero__title-first">Chega de incerteza.</span>
+          <br />
           <span className="text-primary">Hora de resultado.</span>
         </h1>
 
@@ -59,19 +60,6 @@ function HeroSection() {
           </Link>
         </div>
 
-        {/* Métricas rápidas */}
-        <div className="hero__stats animate-fade-up delay-4">
-          {[
-            { number: '100+', label: 'Projetos entregues' },
-            { number: '3x', label: 'Crescimento médio' },
-            { number: '98%', label: 'Clientes satisfeitos' },
-          ].map(({ number, label }) => (
-            <div key={label} className="hero__stat">
-              <span className="hero__stat-number">{number}</span>
-              <span className="hero__stat-label">{label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )

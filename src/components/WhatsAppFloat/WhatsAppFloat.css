@@ -8,13 +8,13 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #25D366;
+  background: #25d342;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
   transition: transform var(--transition), box-shadow var(--transition);
 }
+/* Efeito de foco */
 .wpp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 30px rgba(37, 211, 102, 0.65);
