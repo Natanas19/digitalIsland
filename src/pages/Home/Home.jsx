@@ -32,8 +32,8 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className="hero" aria-label="Apresentação">
-      {/* Grade de fundo decorativa */}
-      <div className="hero__grid grid-bg" aria-hidden="true" />
+      {/* Imagem de fundo do Hero */}
+      <div className="hero__grid" aria-hidden="true" />
 
       {/* Glows decorativos */}
       <div className="hero__glow hero__glow--blue" aria-hidden="true" />
