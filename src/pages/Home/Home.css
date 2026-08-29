@@ -3,11 +3,14 @@
 /* ---- HERO ---- */
 .hero {
   position: relative;
-  min-height: 620px; /* diminui o container */
+  min-height: 620px;
+  /* diminui o container */
   display: flex;
-  align-items: flex-start; /* permite subir o conteúdo */
+  align-items: flex-start;
+  /* permite subir o conteúdo */
   overflow: hidden;
-  padding-top: 5rem; /* controla a altura do texto */
+  padding-top: 5rem;
+  /* controla a altura do texto */
   padding-bottom: 4rem;
 }
 
@@ -442,19 +445,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero__title-first {
-    display: inline-block;
-    transform: translateX(75px);
-  }
 
-  .hero {
-    min-height: 520px;
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
   .hero .container {
     margin-top: -20px;
   }

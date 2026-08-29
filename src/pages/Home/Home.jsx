@@ -10,7 +10,8 @@ import iconConteudo from '../../assets/icons/conteudo.png'
 import { LuRadio, LuMonitorCheck, LuSettings, } from "react-icons/lu";
 import { LuClipboardList, LuRefreshCw, LuMessageCircle, LuTrendingUp, LuTarget, LuCheck } from "react-icons/lu";
 
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+const WHATSAPP = 'https://wa.me/554888793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+
 
 export default function Home() {
   return (
@@ -41,8 +42,7 @@ function HeroSection() {
       <div className="container hero__content">
 
         <h1 className="hero__title animate-fade-up delay-1">
-          <span className="hero__title-first">Chega de incerteza.</span>
-          <br />
+          Chega de incerteza.<br />
           <span className="text-primary">Hora de resultado.</span>
         </h1>
 
