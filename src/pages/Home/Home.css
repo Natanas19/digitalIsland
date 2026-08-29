@@ -76,6 +76,12 @@
   flex-wrap: wrap;
 }
 
+/* Verde somente no hover dos CTAs de conversa da Home */
+.btn.btn-whatsapp-hover:hover {
+  background: #25d342;
+  box-shadow: 0 0 28px rgba(37, 211, 66, 0.4);
+}
+
 /* Stats */
 .hero__stats {
   display: flex;

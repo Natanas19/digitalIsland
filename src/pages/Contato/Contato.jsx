@@ -2,6 +2,7 @@
 // FAQ simples, contato direto e reforço de confiança
 
 import React, { useState } from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 import {
   LuArrowRight,
   LuClipboardList,
@@ -92,7 +93,7 @@ export default function Contato() {
                 className="contato__canal contato__canal--destaque"
               >
                 <div className="contato__canal-icon" style={{ background: 'rgba(37,211,102,0.12)' }}>
-                  <LuMessageCircle size={24} color="#25D366" aria-hidden="true" />
+                  <FaWhatsapp size={24} color="#25D366" aria-hidden="true" />
                 </div>
                 <div>
                   <strong className="contato__canal-titulo">WhatsApp</strong>

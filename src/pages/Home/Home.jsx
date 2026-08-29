@@ -7,6 +7,7 @@ import './Home.css'
 import iconSite from '../../assets/icons/site.svg'
 import iconTrafego from '../../assets/icons/trafego.svg'
 import iconConteudo from '../../assets/icons/conteudo.svg'
+import { FaWhatsapp } from 'react-icons/fa'
 import { LuArrowRight, LuRadio, LuMonitorCheck, LuSettings, } from "react-icons/lu";
 import { LuClipboardList, LuRefreshCw, LuMessageCircle, LuTrendingUp, LuTarget, LuCheck } from "react-icons/lu";
 
@@ -52,7 +53,7 @@ function HeroSection() {
         </p>
 
         <div className="hero__actions animate-fade-up delay-3">
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-whatsapp-hover">
             Fale Conosco
           </a>
           <Link to="/portfolio" className="btn btn-outline">
@@ -215,7 +216,7 @@ function DiferencialSection() {
             Sem surpresas, sem ruído.
           </p>
           <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-            className="btn btn-primary" style={{ marginTop: '2rem' }}>
+            className="btn btn-primary btn-whatsapp-hover" style={{ marginTop: '2rem' }}>
             Vamos conversar
           </a>
         </div>
@@ -350,7 +351,7 @@ function CTAFinalSection() {
         </p>
         <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
           className="btn btn-whatsapp cta-final__btn">
-          <LuMessageCircle size={20} aria-hidden="true" />
+          <FaWhatsapp size={20} aria-hidden="true" />
           Falar no WhatsApp agora
         </a>
       </div>
