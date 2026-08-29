@@ -78,6 +78,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     padding-block: 2.5rem;
+    text-align: center;
   }
   .footer__bottom .container {
     flex-direction: column;

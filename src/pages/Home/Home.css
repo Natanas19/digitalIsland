@@ -450,6 +450,22 @@
     margin-top: -20px;
   }
 
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .services .services__card {
+    align-items: center;
+  }
+
+  .services__icon {
+    margin-inline: auto;
+  }
+
+  .diferencial__text .divider {
+    margin-inline: auto;
+  }
+
   .hero__stats {
     justify-content: space-between;
     gap: 0.5rem;

@@ -171,3 +171,13 @@
     margin-top: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .header__nav {
+    align-items: center;
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+}

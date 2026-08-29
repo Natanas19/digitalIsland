@@ -409,6 +409,16 @@ h5 {
     --color-success: #10b981;
     /* verde moderno (tailwind style) */
   }
+
+  /* Centraliza todos os textos do conteúdo somente no mobile */
+  main,
+  main * {
+    text-align: center !important;
+  }
+
+  main .section-desc {
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 768px) {
