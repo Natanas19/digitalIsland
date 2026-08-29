@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 import { LuMapPin } from 'react-icons/lu'
 import './Footer.css'
 
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+const WHATSAPP = 'https://wa.me/5548988793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
 
 const LINKS = [
-  { label: 'Home',         to: '/' },
-  { label: 'Sites',        to: '/sites' },
+  { label: 'Home', to: '/' },
+  { label: 'Sites', to: '/sites' },
   { label: 'Tráfego Pago', to: '/trafego' },
-  { label: 'Conteúdo',     to: '/conteudo' },
-  { label: 'Portfólio',    to: '/portfolio' },
-  { label: 'Contato',      to: '/contato' },
+  { label: 'Conteúdo', to: '/conteudo' },
+  { label: 'Portfólio', to: '/portfolio' },
+  { label: 'Contato', to: '/contato' },
 ]
 
 export default function Footer() {
@@ -55,9 +55,14 @@ export default function Footer() {
           <a href="mailto:digitalislandcomercial@gmail.com" className="footer__link">
             digitalislandcomercial@gmail.com
           </a>
-          <p className="footer__link" style={{ cursor: 'default' }}>
-            Instagram: @digitalisland.ltda
-          </p>
+          <a
+            href="https://www.instagram.com/digitalisland.ltda"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__link"
+          >
+            Instagram: @digitalislandltda
+          </a>
         </div>
 
       </div>
