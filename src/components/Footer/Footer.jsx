@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { LuMapPin } from 'react-icons/lu'
 import './Footer.css'
 
 const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
@@ -30,7 +31,8 @@ export default function Footer() {
             Chega de incerteza.<br />Hora de resultado.
           </p>
           <p className="footer__location">
-            📍 Florianópolis, SC — Brasil
+            <LuMapPin size={16} aria-hidden="true" />
+            <span>Florianópolis, SC — Brasil</span>
           </p>
         </div>
 

@@ -2,6 +2,19 @@
 // Exibe cases fictícios com foco em organização, apresentação e resultado esperado
 
 import React, { useState } from 'react'
+import {
+  LuBrain,
+  LuBuilding2,
+  LuArrowRight,
+  LuFlower2,
+  LuGift,
+  LuGlasses,
+  LuGraduationCap,
+  LuTarget,
+  LuTrendingUp,
+  LuWrench,
+  LuX,
+} from 'react-icons/lu'
 import './Portfolio.css'
 import '../Sites/Sites.css'
 
@@ -24,7 +37,7 @@ const CASES = [
       { val: '45 dias', desc: 'para resultado consistente' },
     ],
     cor: '#3b9eff',
-    emoji: '🌸',
+    icon: <LuFlower2 size={28} color="#3b9eff" />,
   },
   {
     id: 2,
@@ -41,7 +54,7 @@ const CASES = [
       { val: 'R$12', desc: 'custo médio por lead qualificado' },
     ],
     cor: '#a78bfa',
-    emoji: '🧠',
+    icon: <LuBrain size={28} color="#a78bfa" />,
   },
   {
     id: 3,
@@ -58,7 +71,7 @@ const CASES = [
       { val: '1ª pág', desc: 'no Google para termos locais' },
     ],
     cor: '#f59e0b',
-    emoji: '🏗️',
+    icon: <LuBuilding2 size={28} color="#f59e0b" />,
   },
   {
     id: 4,
@@ -75,7 +88,7 @@ const CASES = [
       { val: '-40%', desc: 'tempo de atendimento por automação' },
     ],
     cor: '#10b981',
-    emoji: '👓',
+    icon: <LuGlasses size={28} color="#10b981" />,
   },
   {
     id: 5,
@@ -92,7 +105,7 @@ const CASES = [
       { val: '8', desc: 'palestras e convites gerados' },
     ],
     cor: '#3b9eff',
-    emoji: '🎓',
+    icon: <LuGraduationCap size={28} color="#3b9eff" />,
   },
   {
     id: 6,
@@ -109,7 +122,7 @@ const CASES = [
       { val: '12 dias', desc: 'para primeiro pedido convertido' },
     ],
     cor: '#f472b6',
-    emoji: '🍫',
+    icon: <LuGift size={28} color="#f472b6" />,
   },
 ]
 
@@ -164,9 +177,9 @@ export default function Portfolio() {
                 onClick={() => setCaseAberto(item)}
                 aria-label={`Ver case: ${item.nome}`}
               >
-                {/* Emoji decorativo */}
+                {/* Ícone decorativo */}
                 <div className="portfolio__emoji" style={{ background: `${item.cor}15` }}>
-                  <span>{item.emoji}</span>
+                  <span>{item.icon}</span>
                 </div>
 
                 <div className="portfolio__card-meta">
@@ -189,7 +202,9 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                <span className="portfolio__ver-mais">Ver case completo →</span>
+                <span className="portfolio__ver-mais">
+                  Ver case completo <LuArrowRight size={15} aria-hidden="true" />
+                </span>
               </button>
             ))}
           </div>
@@ -228,12 +243,14 @@ function CaseModal({ case: c, onClose }) {
   return (
     <div className="modal-overlay" onClick={handleOverlay} role="dialog" aria-modal="true" aria-label={`Case: ${c.nome}`}>
       <div className="modal-box">
-        <button className="modal-close" onClick={onClose} aria-label="Fechar">✕</button>
+        <button className="modal-close" onClick={onClose} aria-label="Fechar">
+          <LuX size={18} aria-hidden="true" />
+        </button>
 
         {/* Cabeçalho */}
         <div className="modal-header">
           <div className="portfolio__emoji" style={{ background: `${c.cor}15`, width: 64, height: 64, fontSize: '1.75rem' }}>
-            <span>{c.emoji}</span>
+            <span>{c.icon}</span>
           </div>
           <div>
             <span className="badge">{c.categoria}</span>
@@ -246,19 +263,19 @@ function CaseModal({ case: c, onClose }) {
 
         {/* Desafio */}
         <div className="modal-section">
-          <h3 className="modal-section-title">🎯 Desafio</h3>
+          <h3 className="modal-section-title"><LuTarget size={18} aria-hidden="true" /> Desafio</h3>
           <p>{c.desafio}</p>
         </div>
 
         {/* Solução */}
         <div className="modal-section">
-          <h3 className="modal-section-title">🛠️ Solução</h3>
+          <h3 className="modal-section-title"><LuWrench size={18} aria-hidden="true" /> Solução</h3>
           <p>{c.solucao}</p>
         </div>
 
         {/* Resultados */}
         <div className="modal-section">
-          <h3 className="modal-section-title">📈 Resultados</h3>
+          <h3 className="modal-section-title"><LuTrendingUp size={18} aria-hidden="true" /> Resultados</h3>
           <div className="modal-results">
             {c.resultado.map(r => (
               <div key={r.desc} className="modal-stat">

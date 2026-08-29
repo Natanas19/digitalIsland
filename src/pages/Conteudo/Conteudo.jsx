@@ -2,33 +2,45 @@
 // Foco: posicionamento, autoridade, consistência
 
 import React from 'react'
+import {
+  LuCalendarDays,
+  LuCamera,
+  LuClapperboard,
+  LuLandmark,
+  LuMail,
+  LuMessageCircle,
+  LuMic,
+  LuNewspaper,
+  LuPenLine,
+  LuTrendingUp,
+} from 'react-icons/lu'
 import '../Sites/Sites.css' // Reaproveita estilos compartilhados
 
 const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20gest%C3%A3o%20de%20conte%C3%BAdo.'
 
 export default function Conteudo() {
   const formatos = [
-    { icon: '📸', title: 'Posts para Redes Sociais', desc: 'Feed, carrosséis e stories com identidade visual consistente e linguagem alinhada à sua marca.' },
-    { icon: '🎬', title: 'Roteiros para Vídeo', desc: 'Roteiros estratégicos para Reels, YouTube Shorts e vídeos institucionais que geram autoridade.' },
-    { icon: '✍️', title: 'Copywriting', desc: 'Textos persuasivos para bio, legendas, anúncios e páginas de venda com foco em conversão.' },
-    { icon: '📰', title: 'Artigos e Blog', desc: 'Conteúdo de valor que melhora o SEO do seu site e posiciona você como referência no mercado.' },
-    { icon: '📧', title: 'E-mail Marketing', desc: 'Sequências de e-mails para nutrir leads, manter o relacionamento e gerar recompra.' },
-    { icon: '🎙️', title: 'Conteúdo de Autoridade', desc: 'Depoimentos, cases de resultado e bastidores que constroem confiança no seu público.' },
+    { icon: <LuCamera size={28} color="var(--color-primary)" />, title: 'Posts para Redes Sociais', desc: 'Feed, carrosséis e stories com identidade visual consistente e linguagem alinhada à sua marca.' },
+    { icon: <LuClapperboard size={28} color="var(--color-primary)" />, title: 'Roteiros para Vídeo', desc: 'Roteiros estratégicos para Reels, YouTube Shorts e vídeos institucionais que geram autoridade.' },
+    { icon: <LuPenLine size={28} color="var(--color-primary)" />, title: 'Copywriting', desc: 'Textos persuasivos para bio, legendas, anúncios e páginas de venda com foco em conversão.' },
+    { icon: <LuNewspaper size={28} color="var(--color-primary)" />, title: 'Artigos e Blog', desc: 'Conteúdo de valor que melhora o SEO do seu site e posiciona você como referência no mercado.' },
+    { icon: <LuMail size={28} color="var(--color-primary)" />, title: 'E-mail Marketing', desc: 'Sequências de e-mails para nutrir leads, manter o relacionamento e gerar recompra.' },
+    { icon: <LuMic size={28} color="var(--color-primary)" />, title: 'Conteúdo de Autoridade', desc: 'Depoimentos, cases de resultado e bastidores que constroem confiança no seu público.' },
   ]
 
   const pilares = [
     {
-      icon: '🏛️',
+      icon: <LuLandmark size={40} color="var(--color-primary)" />,
       title: 'Posicionamento',
       desc: 'Definimos como a sua marca quer ser percebida e criamos conteúdo que reforça essa identidade em cada publicação.',
     },
     {
-      icon: '📅',
+      icon: <LuCalendarDays size={40} color="var(--color-primary)" />,
       title: 'Consistência',
       desc: 'Presença regular e planejada. Nada de postar quando lembra. Calendário editorial organizado, todo mês.',
     },
     {
-      icon: '📈',
+      icon: <LuTrendingUp size={40} color="var(--color-primary)" />,
       title: 'Autoridade',
       desc: 'Conteúdo que educa, informa e demonstra competência. Seu público passa a te ver como referência, não como mais um.',
     },
@@ -155,7 +167,9 @@ export default function Conteudo() {
               background: 'radial-gradient(ellipse at center, hsl(210,100%,55%,0.07) 0%, transparent 70%)',
               pointerEvents: 'none',
             }} />
-            <span style={{ fontSize: '2.5rem', display: 'block', marginBottom: '1rem' }}>💬</span>
+            <span style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+              <LuMessageCircle size={40} color="var(--color-primary)" aria-hidden="true" />
+            </span>
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.2rem, 3vw, 1.6rem)', marginBottom: '1rem' }}>
               Acompanhamento mensal incluso
             </h3>

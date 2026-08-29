@@ -2,6 +2,7 @@
 // Foco: geração de interesse, alcance qualificado, consistência
 
 import React from 'react'
+import { LuBriefcase, LuMegaphone, LuMusic, LuSearch } from 'react-icons/lu'
 import '../Sites/Sites.css' // Reaproveita estilos compartilhados
 import './TrafegoPago.css' // Estilos específicos para tráfego pago
 
@@ -9,10 +10,10 @@ const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse
 
 export default function TrafegoPago() {
   const canais = [
-    { icon: '📘', name: 'Meta Ads', desc: 'Facebook e Instagram. Alcance amplo com segmentação precisa por interesse, comportamento e dados demográficos.' },
-    { icon: '🔍', name: 'Google Ads', desc: 'Apareça quando o cliente está ativamente buscando pelo que você oferece. Intenção de compra alta.' },
-    { icon: '💼', name: 'LinkedIn Ads', desc: 'Para negócios B2B. Segmentação por cargo, empresa e setor. Ideal para alcançar decisores.' },
-    { icon: '🎵', name: 'TikTok Ads', desc: 'Alcance orgânico potencializado com investimento. Ideal para marcas que querem escala rápida.' },
+    { icon: <LuMegaphone size={30} color="var(--color-primary)" />, name: 'Meta Ads', desc: 'Facebook e Instagram. Alcance amplo com segmentação precisa por interesse, comportamento e dados demográficos.' },
+    { icon: <LuSearch size={30} color="var(--color-primary)" />, name: 'Google Ads', desc: 'Apareça quando o cliente está ativamente buscando pelo que você oferece. Intenção de compra alta.' },
+    { icon: <LuBriefcase size={30} color="var(--color-primary)" />, name: 'LinkedIn Ads', desc: 'Para negócios B2B. Segmentação por cargo, empresa e setor. Ideal para alcançar decisores.' },
+    { icon: <LuMusic size={30} color="var(--color-primary)" />, name: 'TikTok Ads', desc: 'Alcance orgânico potencializado com investimento. Ideal para marcas que querem escala rápida.' },
   ]
 
   const passos = [

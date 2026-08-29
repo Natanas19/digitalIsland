@@ -174,7 +174,9 @@
 }
 
 .services__cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   margin-top: 1.25rem;
   font-size: 0.85rem;
   font-weight: 600;
