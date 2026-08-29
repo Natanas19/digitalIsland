@@ -4,9 +4,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
-import iconSite from '../../assets/icons/site.png'
-import iconTrafego from '../../assets/icons/trafego.png'
-import iconConteudo from '../../assets/icons/conteudo.png'
+import iconSite from '../../assets/icons/site.svg'
+import iconTrafego from '../../assets/icons/trafego.svg'
+import iconConteudo from '../../assets/icons/conteudo.svg'
 import { LuRadio, LuMonitorCheck, LuSettings, } from "react-icons/lu";
 import { LuClipboardList, LuRefreshCw, LuMessageCircle, LuTrendingUp, LuTarget, LuCheck } from "react-icons/lu";
 
