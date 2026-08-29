@@ -72,20 +72,20 @@ function ServicosSection() {
   const items = [
     {
       icon: iconSite,
-      title: 'Presença Digital',
+      title: 'Sites e Landing Pages',
       desc: 'Sites e páginas pensados para converter visitantes em clientes. Estrutura clara, visual profissional e carregamento rápido.',
       link: '/sites',
     },
     {
       icon: iconTrafego,
-      title: 'Aquisição de Público',
-      desc: 'Tráfego pago gerenciado com foco em qualidade e resultado. Alcance as pessoas certas, no momento certo.',
+      title: 'Automação de Atendimento',
+      desc: 'Atendimento automatizado para otimizar o relacionamento com o cliente e direcioná-lo sem depender de processos manuais.',
       link: '/trafego',
     },
     {
       icon: iconConteudo,
-      title: 'Comunicação e Conteúdo',
-      desc: 'Posicionamento claro, autoridade construída com consistência. Conteúdo que gera conexão e oportunidades.',
+      title: 'Mídias Sociais',
+      desc: 'Posicionamento da marca e conteúdo postado com frequência. Perfil profissional que gera conexão e oportunidades.',
       link: '/conteudo',
     },
   ]
