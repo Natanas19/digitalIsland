@@ -317,12 +317,31 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  border-color: var(--color-border) !important;
+  box-shadow: none !important;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
+/* O plano "Mais popular" começa pré-selecionado */
 .planos__card--highlight {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 32px var(--color-primary-glow);
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 32px var(--color-primary-glow) !important;
   background: hsl(210, 30%, 8%);
+}
+
+/* O contorno azul acompanha o card sob o mouse */
+.planos__card:hover {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 32px var(--color-primary-glow) !important;
+}
+
+/* Ao passar em outro plano, remove temporariamente a seleção do popular */
+.planos__grid:has(.planos__card:hover)
+  .planos__card--highlight:not(:hover) {
+  border-color: var(--color-border) !important;
+  box-shadow: none !important;
 }
 
 .planos__badge {
