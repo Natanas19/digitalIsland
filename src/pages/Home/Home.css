@@ -187,6 +187,15 @@
 }
 
 /* ---- COMO FUNCIONA ---- */
+.how-it-works {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.82)),
+    url('../../assets/como-funciona-cidade.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .how__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -459,6 +468,21 @@
 }
 
 @media (max-width: 768px) {
+
+  .how-it-works {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.78) 42%,
+        #000000 72%,
+        #000000 100%
+      ),
+      url('../../assets/como-funciona-cidade.jpeg');
+    background-size: 100% 100%, auto 55%;
+    background-position: center, center top;
+    background-repeat: no-repeat;
+  }
 
   .hero {
     min-height: 780px;
