@@ -314,6 +314,15 @@
 }
 
 /* ---- PLANOS ---- */
+.planos {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.84)),
+    url('../../assets/planos-cidade.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .planos__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -468,6 +477,21 @@
 }
 
 @media (max-width: 768px) {
+
+  .planos {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.52) 0%,
+        rgba(0, 0, 0, 0.78) 38%,
+        #000000 68%,
+        #000000 100%
+      ),
+      url('../../assets/planos-cidade.jpeg');
+    background-size: 100% 100%, auto 42%;
+    background-position: center, center top;
+    background-repeat: no-repeat;
+  }
 
   .how-it-works {
     background-image:
