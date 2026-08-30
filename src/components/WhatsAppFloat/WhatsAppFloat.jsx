@@ -4,19 +4,35 @@
 import React from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 import './WhatsAppFloat.css'
-
-const WHATSAPP = 'https://wa.me/554888793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+import { Badge } from '@mui/material'
+import { WHATSAPP_LINKS } from '../../config/contact'
 
 export default function WhatsAppFloat() {
   return (
     <a
-      href={WHATSAPP}
+      href={WHATSAPP_LINKS.home}
       target="_blank"
       rel="noopener noreferrer"
       className="wpp-float"
       aria-label="Fale conosco pelo WhatsApp"
       title="Fale conosco pelo WhatsApp"
     >
+      <Badge
+        badgeContent={1}
+        color="secondary"
+        sx={{
+          '& .MuiBadge-badge': {
+            fontSize: '0.7rem',
+            height: '1.2rem',
+            minWidth: '1.2rem',
+            borderRadius: '50%',
+            padding: '0 4px',
+            backgroundColor: 'var(--color-danger)',
+          },
+          left: '60%',
+          bottom: '35%',
+        }}
+      ></Badge>
       {/* Anel de pulso */}
       <span className="wpp-float__ring" aria-hidden="true" />
 

@@ -7,7 +7,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import WhatsAppFloat from '../WhatsAppFloat/WhatsAppFloat'
 
-export default function Layout() {
+export default function Layout({ children, showHeader = true, showFooter = true }) {
   const { pathname } = useLocation()
 
   // Scroll para o topo a cada troca de rota
@@ -17,14 +17,14 @@ export default function Layout() {
 
   return (
     <>
-      <Header />
+      {showHeader && <Header />}
 
       {/* Conteúdo da página atual */}
-      <main style={{ paddingTop: 'var(--header-h)' }}>
-        <Outlet />
+      <main>
+        {children || <Outlet />}
       </main>
 
-      <Footer />
+      {showFooter && <Footer />}
 
       {/* Botão WhatsApp fixo, visível em todas as páginas */}
       <WhatsAppFloat />

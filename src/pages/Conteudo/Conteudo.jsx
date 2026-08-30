@@ -15,8 +15,7 @@ import {
   LuTrendingUp,
 } from 'react-icons/lu'
 import '../Sites/Sites.css' // Reaproveita estilos compartilhados
-
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20gest%C3%A3o%20de%20conte%C3%BAdo.'
+import { WHATSAPP_LINKS } from '../../config/contact'
 
 export default function Conteudo() {
   const formatos = [
@@ -60,7 +59,7 @@ export default function Conteudo() {
             Não é sobre postar todo dia. É sobre comunicar com consistência, clareza e
             intenção — para que o público certo te encontre e confie em você.
           </p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.content} target="_blank" rel="noopener noreferrer"
             className="btn btn-primary animate-fade-up delay-3" style={{ marginTop: '2rem' }}>
             Quero estruturar meu conteúdo
           </a>
@@ -186,7 +185,7 @@ export default function Conteudo() {
       <section className="section cta-simples">
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 className="section-title">Pronto para construir autoridade digital?</h2>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.content} target="_blank" rel="noopener noreferrer"
             className="btn btn-whatsapp" style={{ marginTop: '1.5rem', fontSize: '1rem', padding: '0.9rem 2rem' }}>
             Falar com a equipe
           </a>

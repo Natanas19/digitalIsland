@@ -1,181 +1,207 @@
 // pages/Sites/Sites.jsx — Página de serviço: Criação de Sites
-// Foco: clareza, conversão, estrutura
+// Seções: visão geral, site institucional, loja virtual, landing page e CTA
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { FaWhatsapp } from 'react-icons/fa'
+import {
+  LuArrowRight,
+  LuCheck,
+} from 'react-icons/lu'
+import lojaVirtualImage from '../../assets/loja-virtual.png'
+import landingPageImage from '../../assets/celular-landing-page.png'
 import './Sites.css'
-import { LuZap, LuSmartphone, LuTarget, LuSearch, LuShieldCheck, LuPencil } from 'react-icons/lu'
+import { WHATSAPP_LINKS } from '../../config/contact'
 
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20site%20profissional.'
+const SOLUTIONS = [
+  {
+    id: 'site-institucional',
+    eyebrow: 'Presença e credibilidade',
+    title: 'Site Institucional',
+    highlight: 'que representa sua empresa',
+    description: 'Uma presença profissional para apresentar sua marca, seus serviços e seus diferenciais com clareza. Ideal para empresas que precisam transmitir confiança e facilitar o primeiro contato.',
+    features: [
+      'Páginas planejadas para apresentar sua empresa',
+      'Serviços, diferenciais e canais de contato organizados',
+      'Estrutura responsiva para celular, tablet e desktop',
+      'Base técnica preparada para mecanismos de busca',
+    ],
+    action: 'Quero um site institucional',
+    whatsappLink: WHATSAPP_LINKS.sites.institutional,
+    theme: 'light',
+  },
+  {
+    id: 'loja-virtual',
+    eyebrow: 'Venda online',
+    title: 'Loja Virtual',
+    highlight: 'pronta para vender',
+    description: 'Uma operação digital organizada para apresentar produtos, receber pedidos e simplificar a jornada de compra. Sua loja disponível todos os dias, em qualquer dispositivo.',
+    features: [
+      'Catálogo de produtos organizado por categorias',
+      'Carrinho e fluxo de compra simplificado',
+      'Integração com meios de pagamento',
+      'Painel para acompanhar produtos e pedidos',
+    ],
+    action: 'Quero vender pela internet',
+    whatsappLink: WHATSAPP_LINKS.sites.store,
+    image: lojaVirtualImage,
+    imageAlt: 'Exemplo de loja virtual com catálogo de produtos e carrinho de compras',
+    imageWidth: 1382,
+    imageHeight: 922,
+  },
+  {
+    id: 'landing-page',
+    eyebrow: 'Campanhas e conversão',
+    title: 'Landing Page',
+    highlight: 'focada em resultado',
+    description: 'Uma página direta, construída em torno de uma única oferta e uma ação principal. Perfeita para anúncios, lançamentos, captação de leads e validação de novos serviços.',
+    features: [
+      'Mensagem alinhada com a intenção da campanha',
+      'Estrutura objetiva e sem distrações',
+      'Chamadas para ação distribuídas estrategicamente',
+      'Integração com WhatsApp e ferramentas de captação',
+    ],
+    action: 'Quero uma landing page',
+    whatsappLink: WHATSAPP_LINKS.sites.landingPage,
+    image: landingPageImage,
+    imageAlt: 'Exemplo de landing page responsiva exibida em um celular',
+    imageWidth: 1152,
+    imageHeight: 1728,
+    imagePosition: 'right',
+    theme: 'blue',
+  },
+]
 
 export default function Sites() {
-  const diferenciais = [
-    {
-      icon: <LuZap size={28} color="var(--color-primary)" />,
-      title: 'Carregamento rápido',
-      desc: 'Sites otimizados para performance, sem deixar o visitante esperando.',
-    },
-    {
-      icon: <LuSmartphone size={28} color="var(--color-primary)" />,
-      title: 'Responsivo em todos os dispositivos',
-      desc: 'Experiência perfeita no celular, tablet e desktop.',
-    },
-    {
-      icon: <LuTarget size={28} color="var(--color-primary)" />,
-      title: 'Focado em conversão',
-      desc: 'Cada elemento da página pensado para transformar visita em contato.',
-    },
-    {
-      icon: <LuSearch size={28} color="var(--color-primary)" />,
-      title: 'Preparado para SEO',
-      desc: 'Estrutura técnica correta para aparecer bem nos mecanismos de busca.',
-    },
-    {
-      icon: <LuShieldCheck size={28} color="var(--color-primary)" />,
-      title: 'Seguro e estável',
-      desc: 'Certificado SSL, hospedagem confiável e suporte contínuo.',
-    },
-    {
-      icon: <LuPencil size={28} color="var(--color-primary)" />,
-      title: 'Fácil de atualizar',
-      desc: 'Painel intuitivo para você editar textos e imagens sem precisar de técnico.',
-    },
-  ]
+  const { hash } = useLocation()
 
-  const tipos = [
-    {
-      title: 'Site Institucional',
-      desc: 'Apresenta sua empresa com profissionalismo. Ideal para gerar credibilidade e ser encontrado pelo público certo.',
-      badge: 'Mais solicitado',
-    },
-    {
-      title: 'Landing Page',
-      desc: 'Página única focada em um único objetivo: converter. Perfeita para campanhas de tráfego pago.',
-      badge: 'Alta conversão',
-    },
-    {
-      title: 'Site + Blog',
-      desc: 'Presença digital completa com conteúdo que gera autoridade e tráfego orgânico ao longo do tempo.',
-      badge: 'Crescimento orgânico',
-    },
-  ]
+  useEffect(() => {
+    const scrollFrame = window.requestAnimationFrame(() => {
+      if (!hash) {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        return
+      }
+
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)))
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+
+    return () => window.cancelAnimationFrame(scrollFrame)
+  }, [hash])
 
   return (
     <>
-      {/* Hero da página */}
-      <section className="page-hero">
+      <section className="page-hero sites-hero" aria-labelledby="sites-title">
         <div className="page-hero__glow" aria-hidden="true" />
-        <div className="container">
+        <div className="container sites-hero__content">
           <span className="section-label animate-fade-up">Serviço</span>
-          <h1 className="page-hero__title animate-fade-up delay-1">
+          <h1 id="sites-title" className="page-hero__title animate-fade-up delay-1">
             Sites que <span className="text-primary">convertem</span>
           </h1>
           <p className="section-desc animate-fade-up delay-2">
             Não basta ter um site bonito. Ele precisa ser claro, rápido e estruturado para transformar
             visitantes em oportunidades reais de negócio.
           </p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-            className="btn btn-primary animate-fade-up delay-3" style={{ marginTop: '2rem' }}>
+          <a href={WHATSAPP_LINKS.sites.hero} target="_blank" rel="noopener noreferrer"
+            className="btn btn-primary animate-fade-up delay-3 sites-hero__button">
             Quero um site profissional
+            <LuArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
       </section>
 
-      {/* Tipos de site */}
-      <section className="section" style={{ background: 'hsl(220, 20%, 3%)' }}>
-        <div className="container">
-          <span className="section-label">O que entregamos</span>
-          <h2 className="section-title">Tipos de projeto</h2>
-          <div className="tipos-grid">
-            {tipos.map(({ title, desc, badge }) => (
-              <div key={title} className="card tipos__card">
-                <span className="badge">{badge}</span>
-                <h3 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>{title}</h3>
-                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: 1.7 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+      {SOLUTIONS.map(solution => (
+        <SolutionSection key={solution.id} {...solution} />
+      ))}
+
+      <section className="sites-cta" aria-labelledby="sites-cta-title">
+        <div className="sites-cta__glow" aria-hidden="true" />
+        <div className="container sites-cta__content">
+          <span className="section-label">Vamos começar?</span>
+          <h2 id="sites-cta-title" className="section-title">
+            Pronto para ter um site<br />
+            <span className="text-primary">que trabalha por você?</span>
+          </h2>
+          <p className="section-desc">
+            Conte para a gente o que você precisa. Vamos entender o momento do seu negócio e indicar
+            a estrutura mais adequada para transformar visitas em oportunidades.
+          </p>
+          <a href={WHATSAPP_LINKS.sites.finalCta} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp sites-cta__button">
+            <FaWhatsapp size={20} aria-hidden="true" />
+            Falar com a equipe
+          </a>
         </div>
       </section>
-
-      {/* Diferenciais */}
-      <section className="section">
-        <div className="container">
-          <div className="text-center">
-            <span className="section-label">Por que a Digital Island</span>
-            <h2 className="section-title">Sites com estrutura real</h2>
-            <p className="section-desc">
-              Cada detalhe é pensado para gerar resultado. Da estrutura técnica à comunicação visual.
-            </p>
-          </div>
-          <div className="diferenciais-grid">
-            {diferenciais.map(({ icon, title, desc }) => (
-              <div key={title} className="card diff-card">
-                <div className="diff-card__icon">
-                  {icon}
-                </div>
-                <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{title}</h3>
-                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', lineHeight: 1.65 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Processo */}
-      <section className="section" style={{ background: 'hsl(220, 20%, 3%)' }}>
-        <div className="container">
-          <span className="section-label">Como trabalhamos</span>
-          <h2 className="section-title">Processo organizado, entrega clara</h2>
-          <div className="processo-grid">
-            {[
-              { n: '01', t: 'Briefing', d: 'Entendemos seu negócio, público e objetivos antes de qualquer linha de código.' },
-              { n: '02', t: 'Planejamento', d: 'Estruturamos o site: páginas, fluxo de navegação e conteúdo necessário.' },
-              { n: '03', t: 'Design', d: 'Criação visual alinhada com a identidade da sua empresa e focada em conversão.' },
-              { n: '04', t: 'Desenvolvimento', d: 'Codificação rápida, responsiva e com as melhores práticas técnicas.' },
-              { n: '05', t: 'Revisão', d: 'Você acompanha, aprova e solicita ajustes antes de ir ao ar.' },
-              { n: '06', t: 'Publicação', d: 'Site no ar com domínio configurado, SSL ativo e suporte pós-entrega.' },
-            ].map(({ n, t, d }) => (
-              <div key={n} className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <span style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '1.5rem',
-                  fontWeight: 700,
-                  color: 'var(--color-primary)',
-                  opacity: 0.5,
-                  lineHeight: 1,
-                  flexShrink: 0,
-                  minWidth: '2.5rem',
-                }}>{n}</span>
-                <div>
-                  <strong style={{ display: 'block', marginBottom: '0.3rem', fontFamily: 'var(--font-heading)' }}>{t}</strong>
-                  <span style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>{d}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <CtaSimples
-        text="Pronto para ter um site que trabalha por você?"
-        btn="Falar com a equipe"
-        link={WHATSAPP}
-      />
     </>
   )
 }
 
-/* CTA genérico reutilizável dentro desta página */
-function CtaSimples({ text, btn, link }) {
+function SolutionSection({
+  id,
+  eyebrow,
+  title,
+  highlight,
+  description,
+  features,
+  action,
+  whatsappLink,
+  theme,
+  image,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  imagePosition = 'left',
+}) {
+  const titleId = `${id}-title`
+  const visual = image && (
+    <div className="sites-solution__visual">
+      <img
+        src={image}
+        alt={imageAlt}
+        width={imageWidth}
+        height={imageHeight}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  )
+
   return (
-    <section className="section cta-simples">
-      <div className="container" style={{ textAlign: 'center' }}>
-        <h2 className="section-title">{text}</h2>
-        <a href={link} target="_blank" rel="noopener noreferrer"
-          className="btn btn-whatsapp" style={{ marginTop: '1.5rem', fontSize: '1rem', padding: '0.9rem 2rem' }}>
-          {btn}
-        </a>
+    <section
+      id={id}
+      className={`sites-solution${theme ? ` sites-solution--${theme}` : ''}`}
+      aria-labelledby={titleId}
+    >
+      {/* <div className="sites-solution__glow" aria-hidden="true" /> */}
+      <div className={`container sites-solution__inner${image ? ` sites-solution__inner--with-visual sites-solution__inner--visual-${imagePosition}` : ''}`}>
+        {imagePosition === 'left' && visual}
+
+        <div className="sites-solution__content">
+          <span className="section-label">{eyebrow}</span>
+          <h2 id={titleId} className="sites-solution__title">
+            {title}<br />
+            <span>{highlight}</span>
+          </h2>
+          <p className="sites-solution__description">{description}</p>
+
+          <ul className="sites-solution__features">
+            {features.map(feature => (
+              <li key={feature}>
+                <span className="sites-solution__check">
+                  <LuCheck size={17} aria-hidden="true" />
+                </span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary sites-solution__button">
+            {action}
+            <LuArrowRight size={18} aria-hidden="true" />
+          </a>
+        </div>
+
+        {imagePosition === 'right' && visual}
       </div>
     </section>
   )

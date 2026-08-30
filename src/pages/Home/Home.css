@@ -3,13 +3,13 @@
 /* ---- HERO ---- */
 .hero {
   position: relative;
-  min-height: 620px;
+  min-height: calc(620px + var(--header-h));
   /* diminui o container */
   display: flex;
   align-items: flex-start;
   /* permite subir o conteúdo */
   overflow: hidden;
-  padding-top: 5rem;
+  padding-top: calc(5rem + var(--header-h));
   /* controla a altura do texto */
   padding-bottom: 4rem;
 }
@@ -168,8 +168,8 @@
 
 /* Aumenta somente o ícone de Automação de Atendimento */
 .services__card:nth-child(2) .services__icon {
-  width: 115px;
-  height: 115px;
+  width: 125px;
+  height: 100px;
 }
 
 .services__title {
@@ -243,7 +243,7 @@
   font-family: var(--font-heading);
   font-size: 3rem;
   font-weight: 700;
-  color: hsl(210, 100%, 55%, 0.15);
+  color: var(--color-text);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -351,6 +351,7 @@
   flex-direction: column;
   border-color: var(--color-border) !important;
   box-shadow: none !important;
+  min-height: 500px;
   transition:
     border-color var(--transition),
     box-shadow var(--transition);
@@ -361,6 +362,7 @@
   border-color: var(--color-primary) !important;
   box-shadow: 0 0 32px var(--color-primary-glow) !important;
   background: hsl(210, 30%, 8%);
+  min-height: 525px;
 }
 
 /* O contorno azul acompanha o card sob o mouse */
@@ -523,8 +525,8 @@
   }
 
   .hero {
-    min-height: 780px;
-    padding-top: 20rem;
+    min-height: calc(780px + var(--header-h));
+    padding-top: calc(20rem + var(--header-h));
     padding-bottom: 4rem;
   }
 

@@ -6,16 +6,25 @@
   right: 0;
   z-index: 100;
   height: var(--header-h);
-  transition: background var(--transition), backdrop-filter var(--transition), border-bottom var(--transition);
+  background-color: transparent;
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
   border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition:
+    background-color var(--transition),
+    backdrop-filter var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 /* Estado após scroll: fundo sólido com blur */
 .header--scrolled {
-  background: hsl(220, 20%, 4%, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background-color: hsl(220, 20%, 4%, 0.88);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
   border-bottom-color: var(--color-border);
+  box-shadow: 0 8px 30px hsl(0, 0%, 0%, 0.2);
 }
 
 .header__inner {
@@ -26,11 +35,11 @@
 }
 
 .header__logo-img {
-  height: 80px;
+  height: 100px;
   /* ajusta conforme sua logo */
   width: auto;
   object-fit: contain;
-  transform: translateY(-2px);
+  transform: translateY(2px);
 }
 
 /* ---- Navegação ---- */
@@ -68,6 +77,81 @@
 .nav-link--active {
   color: var(--color-primary);
   background: hsl(210, 100%, 55%, 0.1);
+}
+
+/* ---- Dropdown Sites ---- */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-dropdown__chevron {
+  transition: transform var(--transition);
+}
+
+.nav-dropdown--open .nav-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 0;
+  width: max-content;
+  min-width: 210px;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: hsl(220, 20%, 6%, 0.98);
+  box-shadow: 0 18px 45px hsl(0, 0%, 0%, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
+}
+
+.nav-dropdown__menu::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 0.75rem;
+}
+
+.nav-dropdown--open .nav-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-dropdown__item {
+  display: block;
+  padding: 0.65rem 0.8rem;
+  border-radius: 7px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition);
+}
+
+.nav-dropdown__item:hover,
+.nav-dropdown__item:focus-visible {
+  color: var(--color-text);
+  background: hsl(210, 100%, 55%, 0.1);
+  outline: none;
 }
 
 /* ---- CTA Desktop ---- */
@@ -134,6 +218,11 @@
     display: none;
   }
 
+
+.header__logo-img {
+  transform: translateY(5px);
+}
+
 .header__nav {
   position: absolute;
   top: 100%;
@@ -152,16 +241,58 @@
   transition: transform var(--transition-slow);
   margin-left: 0;
   overflow-y: auto;
+  visibility: hidden;
+  pointer-events: none;
 }
 
   .header__nav--open {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-link {
     width: 100%;
     padding: 0.75rem 1rem;
     font-size: 1rem;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown__trigger {
+    justify-content: space-between;
+  }
+
+  .nav-dropdown__menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border-width: 0;
+    border-radius: 8px;
+    box-shadow: none;
+    opacity: 1;
+    visibility: hidden;
+    pointer-events: none;
+    transform: none;
+    transition: max-height var(--transition-slow), padding var(--transition);
+  }
+
+  .nav-dropdown--open .nav-dropdown__menu {
+    max-height: 230px;
+    padding: 0.4rem;
+    border-width: 1px;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-dropdown__item {
+    padding: 0.65rem 0.8rem;
+    font-size: 0.9rem;
   }
 
   .header__cta-mobile {
@@ -178,6 +309,14 @@
   }
 
   .nav-link {
+    text-align: center;
+  }
+
+  .nav-dropdown__trigger {
+    justify-content: center;
+  }
+
+  .nav-dropdown__item {
     text-align: center;
   }
 }

@@ -17,8 +17,7 @@ import {
 } from 'react-icons/lu'
 import './Contato.css'
 import '../Sites/Sites.css'
-
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20meu%20projeto.'
+import { CONTACT, CONTACT_LINKS, WHATSAPP_LINKS } from '../../config/contact'
 
 // Perguntas Frequentes
 const FAQS = [
@@ -87,7 +86,7 @@ export default function Contato() {
             <div className="contato__canais">
               {/* WhatsApp — principal */}
               <a
-                href={WHATSAPP}
+                href={WHATSAPP_LINKS.contact}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contato__canal contato__canal--destaque"
@@ -104,7 +103,7 @@ export default function Contato() {
 
               {/* E-mail */}
               <a
-                href="mailto:contato@digitalisland.com.br"
+                href={CONTACT_LINKS.email}
                 className="contato__canal"
               >
                 <div className="contato__canal-icon" style={{ background: 'hsl(210,100%,55%,0.1)' }}>
@@ -112,7 +111,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <strong className="contato__canal-titulo">E-mail</strong>
-                  <span className="contato__canal-desc">contato@digitalisland.com.br</span>
+                  <span className="contato__canal-desc">{CONTACT.email}</span>
                 </div>
                 <span className="contato__canal-seta"><LuArrowRight size={18} aria-hidden="true" /></span>
               </a>
@@ -197,7 +196,7 @@ export default function Contato() {
           <p style={{ color: 'var(--color-text-muted)', marginTop: '0.75rem', marginBottom: '1.5rem' }}>
             Uma conversa de 10 minutos pode ser o início de uma estrutura digital que gera resultado.
           </p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.contact} target="_blank" rel="noopener noreferrer"
             className="btn btn-whatsapp" style={{ fontSize: '1rem', padding: '0.9rem 2rem' }}>
             Falar no WhatsApp
           </a>

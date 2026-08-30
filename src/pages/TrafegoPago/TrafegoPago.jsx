@@ -5,8 +5,7 @@ import React from 'react'
 import { LuBriefcase, LuMegaphone, LuMusic, LuSearch } from 'react-icons/lu'
 import '../Sites/Sites.css' // Reaproveita estilos compartilhados
 import './TrafegoPago.css' // Estilos específicos para tráfego pago
-
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20gest%C3%A3o%20de%20tr%C3%A1fego%20pago.'
+import { WHATSAPP_LINKS } from '../../config/contact'
 
 export default function TrafegoPago() {
   const canais = [
@@ -37,7 +36,7 @@ export default function TrafegoPago() {
             Não adianta aparecer para todo mundo. Gerenciamos suas campanhas para atingir
             as pessoas certas, no momento certo, com a mensagem certa.
           </p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.paidTraffic} target="_blank" rel="noopener noreferrer"
             className="btn btn-primary animate-fade-up delay-3" style={{ marginTop: '2rem' }}>
             Quero mais oportunidades de contato
           </a>
@@ -141,7 +140,7 @@ export default function TrafegoPago() {
       <section className="section cta-simples">
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 className="section-title">Vamos ativar o seu tráfego qualificado?</h2>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.paidTraffic} target="_blank" rel="noopener noreferrer"
             className="btn btn-whatsapp" style={{ marginTop: '1.5rem', fontSize: '1rem', padding: '0.9rem 2rem' }}>
             Falar com a equipe
           </a>

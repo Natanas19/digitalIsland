@@ -17,8 +17,7 @@ import {
 } from 'react-icons/lu'
 import './Portfolio.css'
 import '../Sites/Sites.css'
-
-const WHATSAPP = 'https://wa.me/5548999999999?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.'
+import { WHATSAPP_LINKS } from '../../config/contact'
 
 // Dados dos cases fictícios
 const CASES = [
@@ -223,7 +222,7 @@ export default function Portfolio() {
             Seu negócio pode ser o<br />
             <span className="text-primary">próximo case.</span>
           </h2>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.portfolio} target="_blank" rel="noopener noreferrer"
             className="btn btn-whatsapp" style={{ marginTop: '1.5rem', fontSize: '1rem', padding: '0.9rem 2rem' }}>
             Quero começar agora
           </a>
@@ -287,7 +286,7 @@ function CaseModal({ case: c, onClose }) {
         </div>
 
         <a
-          href={`https://wa.me/5548999999999?text=Ol%C3%A1!%20Vi%20o%20case%20da%20${encodeURIComponent(c.nome)}%20e%20quero%20algo%20semelhante.`}
+          href={WHATSAPP_LINKS.portfolioCase(c.nome)}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-whatsapp"

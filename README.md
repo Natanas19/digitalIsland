@@ -1,16 +1,65 @@
-# React + Vite
+# Digital Island
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação React criada com Vite.
 
-Currently, two official plugins are available:
+## Requisitos mínimos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 18+
+- npm
 
-## React Compiler
+## Instalação
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## Ambiente de desenvolvimento
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev
+```
+
+Por padrão, a aplicação fica disponível em `http://localhost:5173`.
+
+## Build de produção
+
+```bash
+npm run build
+```
+
+O resultado é gerado na pasta `dist`.
+
+Para testar o build localmente:
+
+```bash
+npm run preview
+```
+
+## Scripts
+
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento. |
+| `npm run build` | Gera o build otimizado de produção. |
+| `npm run preview` | Executa uma prévia local do build. |
+
+## Configuração de contato
+
+Os dados de contato e as mensagens do WhatsApp ficam em:
+
+```text
+src/config/contact.js
+```
+
+Esse arquivo centraliza:
+
+- E-mail e telefone.
+- Número do WhatsApp.
+- Mensagens enviadas por página, serviço e plano.
+- Geração dos links de contato.
+
+O número do WhatsApp deve conter somente dígitos, incluindo DDI e DDD.
+
+## Variáveis de ambiente
+
+O projeto não exige variáveis de ambiente atualmente.

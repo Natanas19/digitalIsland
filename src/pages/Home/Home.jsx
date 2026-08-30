@@ -10,8 +10,7 @@ import iconConteudo from '../../assets/icons/conteudo.svg'
 import { FaWhatsapp } from 'react-icons/fa'
 import { LuArrowRight, LuRadio, LuMonitorCheck, LuSettings, } from "react-icons/lu";
 import { LuClipboardList, LuRefreshCw, LuMessageCircle, LuTrendingUp, LuTarget, LuCheck } from "react-icons/lu";
-
-const WHATSAPP = 'https://wa.me/554888793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+import { WHATSAPP_LINKS } from '../../config/contact'
 
 
 export default function Home() {
@@ -53,7 +52,7 @@ function HeroSection() {
         </p>
 
         <div className="hero__actions animate-fade-up delay-3">
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-whatsapp-hover">
+          <a href={WHATSAPP_LINKS.home} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
             Fale Conosco
           </a>
           <Link to="/portfolio" className="btn btn-outline">
@@ -215,7 +214,7 @@ function DiferencialSection() {
             Você sabe exatamente o que está sendo feito, por quê, e quais resultados esperar.
             Sem surpresas, sem ruído.
           </p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+          <a href={WHATSAPP_LINKS.home} target="_blank" rel="noopener noreferrer"
             className="btn btn-primary btn-whatsapp-hover" style={{ marginTop: '2rem' }}>
             Vamos conversar
           </a>
@@ -252,6 +251,7 @@ function PlanosSection() {
         'Relatório de resultados',
       ],
       cta: 'Quero este plano',
+      whatsappLink: WHATSAPP_LINKS.plans.digitalSales,
     },
     {
       name: 'Sistema de Crescimento Contínuo',
@@ -266,6 +266,7 @@ function PlanosSection() {
         'Otimização contínua de campanhas',
       ],
       cta: 'Quero este plano',
+      whatsappLink: WHATSAPP_LINKS.plans.continuousGrowth,
     },
     {
       name: 'Estrutura Avançada Multicanal',
@@ -280,6 +281,7 @@ function PlanosSection() {
         'Atendimento prioritário',
       ],
       cta: 'Quero este plano',
+      whatsappLink: WHATSAPP_LINKS.plans.multichannel,
     },
   ]
 
@@ -297,13 +299,13 @@ function PlanosSection() {
         </div>
 
         <div className="planos__grid">
-          {planos.map(({ name, highlight, desc, items, cta }) => (
+          {planos.map(({ name, highlight, desc, items, cta, whatsappLink }) => (
             <div
               key={name}
               className={`card planos__card ${highlight ? 'planos__card--highlight' : ''}`}
             >
               {highlight && (
-                <span className="planos__badge">Mais popular</span>
+                <span className="planos__badge">Mais vendido</span>
               )}
               <h3 className="planos__name">{name}</h3>
               <p className="planos__desc">{desc}</p>
@@ -318,7 +320,7 @@ function PlanosSection() {
                 ))}
               </ul>
               <a
-                href={WHATSAPP}
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn ${highlight ? 'btn-primary' : 'btn-outline'} planos__btn`}
@@ -349,7 +351,7 @@ function CTAFinalSection() {
           Fale com a gente pelo WhatsApp. Sem enrolação, sem proposta genérica.
           Vamos entender o seu negócio e montar uma estratégia real.
         </p>
-        <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+        <a href={WHATSAPP_LINKS.home} target="_blank" rel="noopener noreferrer"
           className="btn btn-whatsapp cta-final__btn">
           <FaWhatsapp size={20} aria-hidden="true" />
           Falar no WhatsApp agora

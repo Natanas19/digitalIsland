@@ -4,8 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { LuMapPin } from 'react-icons/lu'
 import './Footer.css'
-
-const WHATSAPP = 'https://wa.me/5548988793113?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Digital%20Island.'
+import { CONTACT, CONTACT_LINKS, WHATSAPP_LINKS } from '../../config/contact'
 
 const LINKS = [
   { label: 'Home', to: '/' },
@@ -49,11 +48,11 @@ export default function Footer() {
         {/* Coluna 3 — Contato */}
         <div className="footer__contact">
           <span className="footer__col-title">Contato</span>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="footer__link">
+          <a href={WHATSAPP_LINKS.home} target="_blank" rel="noopener noreferrer" className="footer__link">
             WhatsApp
           </a>
-          <a href="mailto:digitalislandcomercial@gmail.com" className="footer__link">
-            digitalislandcomercial@gmail.com
+          <a href={CONTACT_LINKS.email} className="footer__link">
+            {CONTACT.email}
           </a>
           <a
             href="https://www.instagram.com/digitalisland.ltda"
@@ -61,7 +60,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="footer__link"
           >
-            Instagram: @digitalislandltda
+            Instagram: @digitalisland.ltda
           </a>
         </div>
 

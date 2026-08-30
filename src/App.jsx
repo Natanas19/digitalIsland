@@ -14,6 +14,7 @@ import TrafegoPago from './pages/TrafegoPago/TrafegoPago'
 import Conteudo    from './pages/Conteudo/Conteudo'
 import Portfolio   from './pages/Portfolio/Portfolio'
 import Contato     from './pages/Contato/Contato'
+import NotFound    from './pages/NotFound/NotFound'
 
 export default function App() {
   return (
@@ -31,6 +32,14 @@ export default function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="contato" element={<Contato />} />
         </Route>
+        <Route
+          path="*"
+          element={(
+            <Layout showHeader={false} showFooter={false}>
+              <NotFound />
+            </Layout>
+          )}
+        />
       </Routes>
     </BrowserRouter>
   )
